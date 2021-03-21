@@ -3,8 +3,8 @@ Benefit of Learning this course:
 - Be able to understand and tune for program performance.
 Reality!
 # Reality 1: Overflow
-x*x > 0 ? For float- Yes! For int, probably not becasue of memory outage.
-(X + Y) + Z == X + (Y +Z)? For float - probably not when X+Y == 0 && X,Y >>Z
+  x*x > 0 ? For float- Yes! For int, probably not becasue of memory outage.
+  (X + Y) + Z == X + (Y +Z)? For float - probably not when X+Y == 0 && X,Y >>Z
 # Reality 2: Assembly - key to machine-level execution
 # Reality 3: Memory Matters
   Memory is not unbounded - it must be allocated and managed
