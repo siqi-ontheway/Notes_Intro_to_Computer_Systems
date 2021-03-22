@@ -1,0 +1,53 @@
+Everything is bits.
+Byte = 8 bits
+Boolean Algebra: And, Or, Not, Xor
+Logic Operations in C:
+  * Early ternimation
+Shift Operations:
+  * Logic shift: fill with 0  in java : left - <<  right- >>>    
+  * Arithmatic shift: replicate most significant bit on left   in java: left - <<  right- >>
+  (treat the first digit as sign)
+  * Undefined behavior: shift amount < 0 or >= wordsize. - usually we will just get the original value
+Encoding Integers:
+  *Unsigned -  11101-->29    UMIN = 0; UMAX = 2^W - 1
+  *Two's complement  11101--> -3   TMIN = -2^(W-1)    TMAX = 2^(W-1) - 1
+    for 2'comp., most significant bit indicates sign: 0 - non-negative; 1 - negative
+  * -1 --> 11111111 11111111
+  *-------------------------------------------*
+  * |TMIN| = TMAX + 1;                        *
+  * UMAX = TMAX*2 + 1;  left shift 1 bit + 1  *
+  *-------------------------------------------*
+  --->Mapping between Signed & Unsigned 
+      keep bit representations and reinterprete
+      2's comp.  -> Unsigned:  ordering Inversion; Negative-> Big positive
+      e.g. TMIN - 1 = TMAX; -1 = UMAX
+  *Signd vs Unsigned
+      - Constants: by default are considered to be signed intergers;
+                   Unsigned if have "U" as suffix
+      - Casting: Explicit casting between signed & unsigned sames as mapping above
+                 Implicit casting also occurs vias assignemnts and procedure calls
+                 If there is a mix of un/signed in a signle expression - signed values implicitly cast to unsigned
+                 Casting surprises:
+                 -1 > 0U  - unsigned
+                 (unsigned)-1 > -2 - unsigned
+                 2147483647 > (int) 2147483y648U - signed becasue int is signed
+                 Expression containing signed and unsigned int -> int is cast to unsigned
+                 i is unsigned
+                 for (i = 100U; i>= 0 ; i --)  ----> loop infinitely
+                 i is signed (like as int)
+                 for (i = 100; i - sizeOf(char)>= 0 ; i --)  -->loop infinitely, becasue size of returns unsigned value, and the mix is cast to unsigned value
+      - Sign Extension
+                 C performs sign extension automatically when converting a short data type to long - it doesn't change the value
+      - Expanding Truncating:
+          Expending: unsigned - zeros added
+                     signed = sign extension
+          Truncating: unsigned - mod
+                      signed - similar to mod, sometimes not change value
+                      
+                      
+                 
+                 
+                 
+                 
+                 
+  
