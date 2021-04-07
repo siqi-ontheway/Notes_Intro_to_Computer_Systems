@@ -1,0 +1,35 @@
+Unsigned Addition Overflow
+ - When it results in overflow, the additional carry digit is just simply ignored
+
+Two's complement Addition Overflow
+ - When it results in overflow, the additional carry digit is just simply ignored
+ - Treat remaining bits as 2's complement integer.
+
+Unsigned Multiplication Overflow
+ - When it results in overflow, the additional carry digit is just simply ignored
+ 
+Signed Multiplication Overflow
+ - When it results in overflow, the additional carry digit is just simply ignored
+ - Low bits are the same
+ - Treat remaining bits as 2's complement integer
+ - Some of which are different for signed vs unsigned multiplication
+ 
+ Power-of-2 Shift Multiply with Shift
+  - u<<k gives u*2^k
+  - both signed and unsigned
+ 
+ Unsigned Power-of-2 Divide with Shift
+  - u>>k gives u/2^k
+  - uses logical shift (fill left by 0)>>> in java
+  
+ Byte-Oriented Memory Organization
+  - Programs refer to data by address
+  - System provides private address spaces to each process
+  - Address specify the byte locations
+    * Addresses of first byte in word
+    * Address of successive byte differ by 4(32-bit) or 8(64-bit)
+  Byte Order
+  - Big Endian - order is easy to read
+  - Little Endian - flip big endian
+  
+  
